@@ -15,4 +15,6 @@ interface FeedItem
     public function getFeedItemLink();
 
     public function getFeedItemAuthor();
+
+    public function getFeedCustomAttributes();
 }

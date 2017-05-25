@@ -30,7 +30,12 @@ class Feed
 
         $items = app($class)->{$method}($this->getFeedArgument());
 
-        $meta = ['id' => url($this->feedConfiguration['url']), 'link' => url($this->feedConfiguration['url']), 'title' => $this->feedConfiguration['title'], 'updated' => $this->getLastUpdatedDate($items)];
+        $meta = [
+            'id'      => url($this->feedConfiguration['url']),
+            'link'    => url($this->feedConfiguration['url']),
+            'title'   => $this->feedConfiguration['title'],
+            'updated' => $this->getLastUpdatedDate($items)
+        ];
 
         return view('laravel-feed::feed', compact('meta', 'items'))->render();
     }

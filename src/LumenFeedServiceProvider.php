@@ -18,6 +18,8 @@ class LumenFeedServiceProvider extends LaravelFeedServiceProvider
 
     protected function registerRouteMacro()
     {
+        // dd(config('laravel-feed.feeds'));
+
         foreach (config('laravel-feed.feeds') as $index => $feedConfiguration) {
             $this->app->get(
                 Path::merge('', $feedConfiguration['url']),
