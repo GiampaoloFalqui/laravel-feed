@@ -24,6 +24,9 @@
                 <![CDATA[{!! $item->getFeedItemSummary() !!}]]>
             </summary>
             <updated>{{ $item->getFeedItemUpdated()->toAtomString() }}</updated>
+            @foreach ($item->getFeedCustomAttributes() as $key => $value)
+                <{{ $key }}>{{ $value }}</{{ $key }}>
+            @endforeach
         </entry>
     @endforeach
 </feed>
